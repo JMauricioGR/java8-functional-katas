@@ -20,12 +20,12 @@ public class Kata2 {
     public static List<Integer> execute() {
         List<Movie> movies = DataUtil.getMovies();
 
-         return movies.stream().filter(movie -> movie.getRating() == 5.0).map(item -> {
-            Integer result = item.getId();
-            return result;
-        }).collect(Collectors.toList());
-
-
+         return movies.stream()
+                 .filter(movie -> movie.getRating() == 5.0)
+                 .map(item -> {
+                     Integer result = item.getId();
+                     return result;
+                 }).collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
