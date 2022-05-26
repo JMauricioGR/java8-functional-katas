@@ -27,7 +27,6 @@ public class Kata5 {
                     return result;
                 });
 
-
     }
 
     public static void main(String[] args) {
