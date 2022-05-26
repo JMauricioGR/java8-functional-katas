@@ -7,6 +7,7 @@ import model.Movie;
 import model.MovieList;
 import util.DataUtil;
 
+import javax.swing.text.Element;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,18 @@ public class Kata5 {
     public static Double execute() {
         List<Movie> movies = DataUtil.getMovies();
 
-        return 3.0;
+        return movies.stream()
+                .map(item -> item.getRating())
+                .reduce( 0.0, (acumulator, rating)->{
+                   Double result = (acumulator > rating)?acumulator:rating;
+                    return result;
+                });
+
+
+    }
+
+    public static void main(String[] args) {
+        Kata5 exercise1 = new Kata5();
+        System.out.println(exercise1.execute());
     }
 }
